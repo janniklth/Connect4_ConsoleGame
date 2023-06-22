@@ -41,13 +41,14 @@ Connect 4 is a classic two-player game where the goal is to connect four discs o
 
 ### Usage
 
-Navigate to the project directory.
+1. Navigate to the project directory.
 
-Run the compiled executable:
+2. Run the compiled executable:
 
-    ./connect4
+   ```bash
+   ./connect4
 
-Follow the on-console instructions to play the game.
+4. Follow the on-console instructions to select the opponents and play the game.
 
 
 ## Contributing
@@ -71,6 +72,7 @@ The Programming Lecture team at DHBW Stuttgart for providing the project require
 
 ## Contact
 
-For any questions or inquiries, please contact your-email@example.com.
+Thank you for checking out our project. We hope it is fun to play and helpful in expanding your knowledge of C++. If you have any questions, don't hesitate to contact ous.
+
 
 
