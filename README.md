@@ -5,7 +5,7 @@ This project is a console-based implementation of the Connect 4 game. It is deve
 
 ## Description
 
-Connect 4 is a classic two-player game where the goal is to connect four discs of the same color in a vertical, horizontal, or diagonal line on a grid. This project provides a command-line interface to play the game.
+Connect 4 is a classic two-player game where the goal is to connect four discs of the same color in a vertical, horizontal, or diagonal line on a grid. This project provides a command-line interface to play the game against a bot or another human player.
 
 ## Features
 
