@@ -64,7 +64,7 @@ Contributions to this project are welcome. Some areas where you can contribute i
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. For more information, please see the [LICENSE](LICENSE) file.
 
 ## Acknowledgements
 
