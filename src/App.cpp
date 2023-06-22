@@ -3,3 +3,52 @@
 //
 
 #include "App.hpp"
+
+// main method to run the game
+void App::run()
+{
+    // Welcome message
+    cout << "Welcome to Connect4!" << endl;
+
+    // choose first player type and get input from user
+    PlayerType player_red = choosePlayerType("first (red)");
+    PlayerType player_yellow = choosePlayerType("second (yellow)");
+
+
+    // create players
+
+
+}
+
+
+// Method to choose a player type
+PlayerType App::choosePlayerType(std::string player_color)
+{
+    cout << "Please choose player type for the " << player_color << " player:" << endl;
+    cout << "  1. Human" << endl;
+    cout << "  2. Bot (horizontal)" << endl;
+    cout << "  3. Bot (vertical)" << endl;
+    cout << "  4. Bot (random)" << endl;
+    cout << "  5. Bot (AI)" << endl;
+    cout << "Please enter a number: ";
+
+    int selected_player_type;
+    std::cin >> selected_player_type;
+    cout << endl;
+
+    switch (selected_player_type) {
+        case 1:
+            return PlayerType::HUMAN;
+        case 2:
+            return PlayerType::BOT_HORIZONTAL;
+        case 3:
+            return PlayerType::BOT_VERTICAL;
+        case 4:
+            return PlayerType::BOT_RANDOM;
+        case 5:
+            return PlayerType::BOT_AI;
+        default:
+            cout << "Invalid input. Please try again." << endl;
+            return choosePlayerType(player_color);
+    }
+}
