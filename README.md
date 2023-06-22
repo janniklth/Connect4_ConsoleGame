@@ -9,7 +9,7 @@ Connect 4 is a classic two-player game where the goal is to connect four discs o
 
 ### Class Diagram
 
-
+https://github.com/janniklth/Connect4_ConsoleGame/blob/c01f1f4923797248a5d2ab4278dc88dcf231aa25/UML_Diagramm.png
 
 
 
