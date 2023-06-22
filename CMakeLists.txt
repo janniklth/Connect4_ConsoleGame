@@ -3,4 +3,4 @@ project(Connect4_ConsoleGame)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Connect4_ConsoleGame main.cpp)
+add_executable(Connect4_ConsoleGame src/main.cpp)
