@@ -76,9 +76,6 @@ Contributions to this project are welcome. Some areas where you can contribute i
 
 This project is licensed under the MIT License. For more information, please see the [LICENSE](LICENSE.md) file.
 
-## Acknowledgements
-
-The Programming Lecture team at DHBW Stuttgart for providing the project requirements and guidance.
 
 ## Contact
 
