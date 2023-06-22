@@ -9,7 +9,7 @@ Connect 4 is a classic two-player game where the goal is to connect four discs o
 
 ### Class Diagram
 
-<img src="[UML_Diagramm.png)" alt="Alt text" title="Optional title">
+<img src="[/UML_Diagramm.png)" alt="Alt text" title="Optional title">
 
 - `App`: Represents a computer-controlled player with different strategies.
 - `Game`: Represents the game logic and controls the flow of the game.
