@@ -1,7 +1,12 @@
 #include <iostream>
+#include "App.hpp"
+
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    App application;
+    application.run();
+
+
     return 0;
 }
