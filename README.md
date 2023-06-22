@@ -7,6 +7,18 @@ This project is a console-based implementation of the Connect 4 game. It is deve
 
 Connect 4 is a classic two-player game where the goal is to connect four discs of the same color in a vertical, horizontal, or diagonal line on a grid. This project provides a command-line interface to play the game against a bot or another human player.
 
+### Class Diagram
+
+
+
+
+
+- `App`: Represents a computer-controlled player with different strategies.
+- `Game`: Represents the game logic and controls the flow of the game.
+- `Board`: Manages the game board and provides operations for placing discs and checking win conditions.
+- `Player`: Represents a player and stores information such as player name and disc color.
+
+
 ## Features
 
 - Interactive gameplay for two human players
