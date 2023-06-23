@@ -44,6 +44,12 @@ public:
     /// @param color: the color to set the field to
     void setField(int x, int y, FieldColor color);
 
+    /// Method to print a colored character
+    /// @param character: the character to print
+    /// @param color: the color to print
+    void printColoredCharacter(char character, FieldColor color);
+
+
 
     /// Method to set the lowest free field in a column
     /// @param column: the column to set

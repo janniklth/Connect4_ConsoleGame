@@ -16,10 +16,10 @@ void Board::printBoard()
             switch (m_fields[i][j])
             {
                 case FieldColor::RED:
-                    std::cout << "R";
+                    Board::printColoredCharacter('R', FieldColor::RED);
                     break;
                 case FieldColor::YELLOW:
-                    std::cout << "Y";
+                    Board::printColoredCharacter('Y', FieldColor::YELLOW);
                     break;
                 case FieldColor::NONE:
                     std::cout << " ";
@@ -51,4 +51,24 @@ void Board::setLowestFreeField(int column, FieldColor color)
             break;
         }
     }
+}
+
+// method to set a field on the board with colored characters
+void Board::printColoredCharacter(char character, FieldColor color)
+{
+    switch (color)
+    {
+        case FieldColor::RED:
+            std::cout << "\033[1;31m";
+            break;
+        case FieldColor::YELLOW:
+            std::cout << "\033[1;43m";
+            break;
+        case FieldColor::NONE:
+            std::cout << "\033[0m";
+            break;
+    }
+    std::cout << character;
+    std::cout << "\033[0m";
+
 }
