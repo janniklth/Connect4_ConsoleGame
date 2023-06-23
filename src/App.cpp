@@ -4,6 +4,7 @@
 
 #include "App.hpp"
 
+
 // main method to run the game
 void App::run()
 {
@@ -15,7 +16,24 @@ void App::run()
     PlayerType player_yellow = choosePlayerType("second (yellow)");
 
 
+    // create the board and test print it
+    Board gameboard(6, 7);
+    gameboard.printBoard();
+
+    // fill some random fields
+    gameboard.setField(5, 0, FieldColor::RED);
+    gameboard.setField(5, 1, FieldColor::YELLOW);
+    gameboard.setField(5, 2, FieldColor::RED);
+    gameboard.setField(5, 3, FieldColor::YELLOW);
+    gameboard.setField(5, 4, FieldColor::RED);
+    gameboard.setField(5, 5, FieldColor::YELLOW);
+    gameboard.setField(5, 6, FieldColor::RED);
+
+    gameboard.printBoard();
+
     // create players
+
+
 
 
 }

@@ -7,6 +7,8 @@
 
 #include <iostream>
 
+#include "Board.hpp"
+
 using std::cout;
 using std::endl;
 
