@@ -45,6 +45,12 @@ public:
     void setField(int x, int y, FieldColor color);
 
 
+    /// Method to set the lowest free field in a column
+    /// @param column: the column to set
+    /// @param color: the color to set the column to
+    void setLowestFreeField(int column, FieldColor color);
+
+
 private:
     int m_height;
     int m_width;

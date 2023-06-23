@@ -37,3 +37,18 @@ void Board::setField(int x, int y, FieldColor color)
 {
     m_fields[x][y] = color;
 }
+
+
+
+// method to set the lowest free field in a column
+void Board::setLowestFreeField(int column, FieldColor color)
+{
+    for (int i = m_height - 1; i >= 0; i--)
+    {
+        if (m_fields[i][column] == FieldColor::NONE)
+        {
+            m_fields[i][column] = color;
+            break;
+        }
+    }
+}

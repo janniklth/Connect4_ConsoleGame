@@ -29,6 +29,13 @@ void App::run()
     gameboard.setField(5, 5, FieldColor::YELLOW);
     gameboard.setField(5, 6, FieldColor::RED);
 
+    gameboard.setLowestFreeField(0, FieldColor::RED);
+    gameboard.setLowestFreeField(0, FieldColor::YELLOW);
+    gameboard.setLowestFreeField(0, FieldColor::RED);
+    gameboard.setLowestFreeField(1, FieldColor::YELLOW);
+    gameboard.setLowestFreeField(3, FieldColor::YELLOW);
+    gameboard.setLowestFreeField(3, FieldColor::RED);
+
     gameboard.printBoard();
 
     // create players
