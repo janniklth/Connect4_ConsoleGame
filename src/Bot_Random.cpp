@@ -8,8 +8,24 @@
 void Bot_Random::setMove(Board &board)
 {
     // some prints to make the bot look like it's thinking
-    std::cout << this->m_name << " is thinking about his next move";
-    std::cout.flush();
+    std::cout << this->m_name << " is thinking about his next move   ";
+    for (int j = 0; j < 2; j++)
+    {
+        std::cout.flush();
+        std::cout << "\b\b\b   \b\b\b";
+        std::cout.flush();
+        std::this_thread::sleep_for(std::chrono::milliseconds(300));
+        std::cout.flush();
+        for (int i = 0; i < 3; i++)
+        {
+            std::cout << ".";
+            std::cout.flush();
+            std::this_thread::sleep_for(std::chrono::milliseconds(300));
+            std::cout.flush();
+        }
+    }
+    std::cout << std::endl;
+
 
     // get a random number between 0 and the width of the board
     int column = rand() % (board.getWidth());
