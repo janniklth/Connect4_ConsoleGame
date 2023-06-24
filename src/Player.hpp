@@ -6,6 +6,8 @@
 #define CONNECT4_CONSOLEGAME_PLAYER_HPP
 
 
+#include <utility>
+
 #include "Board.hpp"
 
 
@@ -14,17 +16,29 @@ class Player
 public:
     // default constructor
     Player()
-    {};
+    = default;;
 
     // overloaded constructor
     Player(std::string name, FieldColor color)
-        : m_name(name)
+        : m_name(std::move(name))
         , m_color(color)
     {};
 
     // destructor
-    ~Player()
-    {};
+    virtual ~Player()
+    = default;;
+
+    /// Method to make a move
+    /// @param board: the board to make the move on
+    virtual void setMove(Board& board) = 0;
+
+
+
+    // - - - Getter and Setter - - -
+
+    /// Method to get the name of the player
+    /// @return std::string: the name of the player
+    std::string getName();
 
 private:
     std::string m_name;
