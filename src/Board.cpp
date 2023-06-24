@@ -7,7 +7,6 @@
 // method to print the board
 void Board::printBoard()
 {
-
     std::cout << "_______________" << std::endl;
     std::cout << "|1 2 3 4 5 6 7|" << std::endl;
     for (int i = 0; i < m_height; i++)
@@ -34,12 +33,12 @@ void Board::printBoard()
     std::cout << "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯" << std::endl;
 }
 
+
 // method to set a field on the board
 void Board::setField(int x, int y, FieldColor color)
 {
     m_fields[x][y] = color;
 }
-
 
 
 // method to set the lowest free field in a column
@@ -54,6 +53,7 @@ void Board::setLowestFreeField(int column, FieldColor color)
         }
     }
 }
+
 
 // method to set a field on the board with colored characters
 void Board::printColoredCharacter(char character, FieldColor color)
