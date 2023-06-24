@@ -62,7 +62,7 @@ void Board::printColoredCharacter(char character, FieldColor color)
             std::cout << "\033[1;31m";
             break;
         case FieldColor::YELLOW:
-            std::cout << "\033[1;43m";
+            std::cout << "\033[1;33m";
             break;
         case FieldColor::NONE:
             std::cout << "\033[0m";
@@ -70,5 +70,4 @@ void Board::printColoredCharacter(char character, FieldColor color)
     }
     std::cout << character;
     std::cout << "\033[0m";
-
 }
