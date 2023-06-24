@@ -3,6 +3,8 @@
 //
 
 #include "App.hpp"
+#include "Player.hpp"
+#include "Human.hpp"
 
 
 // main method to run the game
@@ -20,29 +22,21 @@ void App::run()
     Board gameboard(6, 7);
     gameboard.printBoard();
 
-    // fill some random fields
-    gameboard.setField(5, 0, FieldColor::RED);
-    gameboard.setField(5, 1, FieldColor::YELLOW);
-    gameboard.setField(5, 2, FieldColor::RED);
-    gameboard.setField(5, 3, FieldColor::YELLOW);
-    gameboard.setField(5, 4, FieldColor::RED);
-    gameboard.setField(5, 5, FieldColor::YELLOW);
-    gameboard.setField(5, 6, FieldColor::RED);
-
-    gameboard.setLowestFreeField(0, FieldColor::RED);
-    gameboard.setLowestFreeField(0, FieldColor::YELLOW);
-    gameboard.setLowestFreeField(0, FieldColor::RED);
-    gameboard.setLowestFreeField(1, FieldColor::YELLOW);
-    gameboard.setLowestFreeField(3, FieldColor::YELLOW);
-    gameboard.setLowestFreeField(3, FieldColor::RED);
-
-    gameboard.printBoard();
-
     // create players
+    Human player1("Player 1", FieldColor::RED);
+    Human player2("Player 2", FieldColor::YELLOW);
 
+    // main loop
+    while (true)
+    {
+        // player 1 makes a move
+        player1.setMove(gameboard);
+        gameboard.printBoard();
 
-
-
+        // player 2 makes a move
+        player2.setMove(gameboard);
+        gameboard.printBoard();
+    }
 }
 
 

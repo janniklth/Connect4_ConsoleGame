@@ -40,7 +40,7 @@ public:
     /// @return std::string: the name of the player
     std::string getName();
 
-private:
+protected:
     std::string m_name;
     FieldColor m_color;
 };

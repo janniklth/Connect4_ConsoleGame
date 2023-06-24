@@ -12,4 +12,6 @@ add_executable(Connect4_ConsoleGame
         src/Board.cpp
         src/Board.hpp
         src/Player.cpp
-        src/Player.hpp)
+        src/Player.hpp
+        src/Human.cpp
+        src/Human.hpp)
