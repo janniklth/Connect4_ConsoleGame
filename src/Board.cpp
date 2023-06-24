@@ -73,3 +73,16 @@ void Board::printColoredCharacter(char character, FieldColor color)
     std::cout << character;
     std::cout << "\033[0m";
 }
+
+
+// method to get the height of the board
+int Board::getHeight() const
+{
+    return m_height;
+}
+
+// method to get the width of the board
+int Board::getWidth() const
+{
+    return m_width;
+}

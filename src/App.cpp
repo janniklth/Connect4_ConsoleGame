@@ -5,6 +5,7 @@
 #include "App.hpp"
 #include "Player.hpp"
 #include "Human.hpp"
+#include "Bot_Random.hpp"
 
 
 // main method to run the game
@@ -24,7 +25,7 @@ void App::run()
 
     // create players
     Human player1("Player 1", FieldColor::RED);
-    Human player2("Player 2", FieldColor::YELLOW);
+    Bot_Random player2("Player 2", FieldColor::YELLOW);
 
     // main loop
     while (true)

@@ -55,6 +55,18 @@ public:
     void setLowestFreeField(int column, FieldColor color);
 
 
+    // - - - Getter and Setter - - -
+
+    /// Method to get the height of the board
+    /// @return int: the height of the board
+    int getHeight() const;
+
+    /// Method to get the width of the board
+    /// @return int: the width of the board
+    int getWidth() const;
+
+
+
 private:
     int m_height;
     int m_width;
