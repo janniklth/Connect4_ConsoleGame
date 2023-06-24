@@ -7,7 +7,9 @@
 // method to print the board
 void Board::printBoard()
 {
+
     std::cout << "_______________" << std::endl;
+    std::cout << "|1 2 3 4 5 6 7|" << std::endl;
     for (int i = 0; i < m_height; i++)
     {
         std::cout << "|";

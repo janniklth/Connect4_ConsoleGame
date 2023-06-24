@@ -49,8 +49,6 @@ public:
     /// @param color: the color to print
     void printColoredCharacter(char character, FieldColor color);
 
-
-
     /// Method to set the lowest free field in a column
     /// @param column: the column to set
     /// @param color: the color to set the column to
