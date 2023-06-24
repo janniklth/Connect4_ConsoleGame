@@ -33,9 +33,15 @@ void App::run()
         player1.setMove(gameboard);
         gameboard.printBoard();
 
+        // check win condition
+        // ...
+
         // player 2 makes a move
         player2.setMove(gameboard);
         gameboard.printBoard();
+
+        // check win condition
+        // ...
     }
 }
 
