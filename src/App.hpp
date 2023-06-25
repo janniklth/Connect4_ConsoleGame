@@ -45,6 +45,7 @@ public:
 
     /// Method to run the connect4 application and show a menu
     void run();
+    void playerTypeToobject();
 
 private:
 
