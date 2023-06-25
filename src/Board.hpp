@@ -54,6 +54,10 @@ public:
     /// @param color: the color to set the column to
     void setLowestFreeField(int column, FieldColor color);
 
+    // Method to check if game is finished (somebody won or board is full)
+    /// @return bool: true if game is finished, false if not
+    bool isGameFinished();
+
 
     // - - - Getter and Setter - - -
 
