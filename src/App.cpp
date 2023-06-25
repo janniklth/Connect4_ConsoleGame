@@ -15,30 +15,37 @@ void App::run()
     cout << "Welcome to Connect4!" << endl;
 
     // choose first player type and get input from user
-    PlayerType player_red = choosePlayerType("first (red)");
-    PlayerType player_yellow = choosePlayerType("second (yellow)");
+    //PlayerType player_red = choosePlayerType("first (red)");
+    //PlayerType player_yellow = choosePlayerType("second (yellow)");
 
-
+    Player *player1 = playerTypeToObject("Player 1", "red", FieldColor::RED);
+    Player *player2 =  playerTypeToObject("Player 2", "yellow", FieldColor::YELLOW);
     // create the board and test print it
     Board gameboard(6, 7);
     gameboard.printBoard();
 
+
+
     // create players
-    Human player1("Player 1", FieldColor::RED);
-    Bot_Random player2("Player 2", FieldColor::YELLOW);
+    //Human player1("Player 1", FieldColor::RED);
+    //Bot_Random player2("Player 2", FieldColor::YELLOW);
 
     // main loop
     while (true)
     {
         // player 1 makes a move
-        player1.setMove(gameboard);
+        //player1.setMove(gameboard);
+
+        player1->setMove(gameboard);
         gameboard.printBoard();
 
         // check win condition
         // ...
 
         // player 2 makes a move
-        player2.setMove(gameboard);
+        //player2.setMove(gameboard);
+
+        player2->setMove(gameboard);
         gameboard.printBoard();
 
         // check win condition
@@ -79,6 +86,24 @@ PlayerType App::choosePlayerType(std::string player_color)
     }
 }
 
-Player App::playerTypeToObject(std::string player_name) {
+Player *App::playerTypeToObject(std::string player_name, std::string player_color, FieldColor color) {
 
+    cout << "Please choose player type for the " << player_color << " player:" << endl;
+    cout << "  1. Human" << endl;
+    cout << "  2. Bot (horizontal)" << endl;
+    cout << "  3. Bot (vertical)" << endl;
+    cout << "  4. Bot (random)" << endl;
+    cout << "  5. Bot (AI)" << endl;
+    cout << "Please enter a number: ";
+
+    int selected_player_type;
+    std::cin >> selected_player_type;
+    cout << endl;
+
+    switch (selected_player_type) {
+        case 1:
+            Human player(player_name, color);
+            return &player;
+            break;
+    }
 }

@@ -45,7 +45,7 @@ public:
 
     /// Method to choose a player type
     /// @return Player: player object based on chosen player type
-    Player playerTypeToObject(std::string player_name);
+    Player *playerTypeToObject(std::string player_name, std::string player_color, FieldColor color);
 
     /// Method to run the connect4 application and show a menu
     void run();
