@@ -27,7 +27,7 @@ public:
     /// Method to make a move
     /// @param board: the board to make the move on
     void setMove(Board& board) override;
-
+    
 };
 
 
