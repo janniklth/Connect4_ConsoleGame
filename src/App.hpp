@@ -6,7 +6,7 @@
 #define CONNECT4_CONSOLEGAME_APP_HPP
 
 #include <iostream>
-
+#include "Player.hpp"
 #include "Board.hpp"
 
 using std::cout;
@@ -43,9 +43,13 @@ public:
     /// @return PlayerType: the chosen player type
     PlayerType choosePlayerType(std::string player_color);
 
+    /// Method to choose a player type
+    /// @return Player: player object based on chosen player type
+    Player playerTypeToObject(std::string player_name);
+
     /// Method to run the connect4 application and show a menu
     void run();
-    void playerTypeToobject();
+
 
 private:
 

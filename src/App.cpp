@@ -78,3 +78,7 @@ PlayerType App::choosePlayerType(std::string player_color)
             return choosePlayerType(player_color);
     }
 }
+
+Player App::playerTypeToObject(std::string player_name) {
+
+}
