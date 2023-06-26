@@ -15,11 +15,11 @@ void App::run()
     cout << "Welcome to Connect4!" << endl;
 
     // choose first player type and get input from user
-    //PlayerType player_red = choosePlayerType("first (red)");
-    //PlayerType player_yellow = choosePlayerType("second (yellow)");
+    PlayerType player_red = choosePlayerType("first (red)");
+    PlayerType player_yellow = choosePlayerType("second (yellow)");
 
-    Player *player1 = playerTypeToObject("Player 1", "red", FieldColor::RED);
-    Player *player2 =  playerTypeToObject("Player 2", "yellow", FieldColor::YELLOW);
+    P
+
     // create the board and test print it
     Board gameboard(6, 7);
     gameboard.printBoard();
@@ -86,24 +86,22 @@ PlayerType App::choosePlayerType(std::string player_color)
     }
 }
 
-Player *App::playerTypeToObject(std::string player_name, std::string player_color, FieldColor color) {
+Player *App::playerTypeToObject(PlayerType playerType, std::string player_name, FieldColor color) {
 
-    cout << "Please choose player type for the " << player_color << " player:" << endl;
-    cout << "  1. Human" << endl;
-    cout << "  2. Bot (horizontal)" << endl;
-    cout << "  3. Bot (vertical)" << endl;
-    cout << "  4. Bot (random)" << endl;
-    cout << "  5. Bot (AI)" << endl;
-    cout << "Please enter a number: ";
-
-    int selected_player_type;
-    std::cin >> selected_player_type;
-    cout << endl;
-
-    switch (selected_player_type) {
-        case 1:
-            Human player(player_name, color);
-            return &player;
+    switch(playerType){
+        case PlayerType::HUMAN:
+            Human player_human(player_name, color);
+            return &player_human;
+            break;
+        case PlayerType::BOT_RANDOM:
+            Bot_Random player_bot_random(player_name, color);
+            return &player_bot_random;
+            break;
+        case PlayerType::BOT_HORIZONTAL:
+            break;
+        case PlayerType::BOT_VERTICAL:
+            break;
+        case PlayerType::BOT_AI:
             break;
     }
 }
