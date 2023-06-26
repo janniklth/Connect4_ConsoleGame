@@ -19,8 +19,6 @@ void App::run()
     PlayerType player_yellow = choosePlayerType("second (yellow)");
 
     // create players
-    //Human player1("Player 1", FieldColor::RED);
-    //Bot_Random player2("Player 2", FieldColor::YELLOW);
     Player *player1 = playerTypeToObject(player_red, "Player 1", FieldColor::RED);
     Player *player2 = playerTypeToObject(player_yellow, "Player 2", FieldColor::YELLOW);
     
