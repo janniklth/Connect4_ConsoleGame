@@ -18,17 +18,17 @@ void App::run()
     PlayerType player_red = choosePlayerType("first (red)");
     PlayerType player_yellow = choosePlayerType("second (yellow)");
 
-    P
-
+    // create players
+    //Human player1("Player 1", FieldColor::RED);
+    //Bot_Random player2("Player 2", FieldColor::YELLOW);
+    Player *player1 = playerTypeToObject(player_red, "Player 1", FieldColor::RED);
+    Player *player2 = playerTypeToObject(player_yellow, "Player 2", FieldColor::YELLOW);
+    
     // create the board and test print it
     Board gameboard(6, 7);
     gameboard.printBoard();
 
 
-
-    // create players
-    //Human player1("Player 1", FieldColor::RED);
-    //Bot_Random player2("Player 2", FieldColor::YELLOW);
 
     // main loop
     while (true)
@@ -86,22 +86,21 @@ PlayerType App::choosePlayerType(std::string player_color)
     }
 }
 
+// Method to convert a player type to a player object (enum to object)
 Player *App::playerTypeToObject(PlayerType playerType, std::string player_name, FieldColor color) {
 
-    switch(playerType){
+    switch (playerType) {
         case PlayerType::HUMAN:
-            Human player_human(player_name, color);
-            return &player_human;
-            break;
+            return new Human(player_name, color);
         case PlayerType::BOT_RANDOM:
-            Bot_Random player_bot_random(player_name, color);
-            return &player_bot_random;
-            break;
+            return new Bot_Random(player_name, color);
         case PlayerType::BOT_HORIZONTAL:
-            break;
+            return nullptr;
         case PlayerType::BOT_VERTICAL:
-            break;
+            return nullptr;
         case PlayerType::BOT_AI:
-            break;
+            return nullptr;
+        default:
+            return nullptr;
     }
 }
