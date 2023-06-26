@@ -78,17 +78,82 @@ void Board::printColoredCharacter(char character, FieldColor color)
 WinnerColor Board::checkWinner()
 {
     int need_to_win = 4;
-    for (int i = 0; i < (this->m_height - need_to_win); ++i) {
-        for (int j = 0; j < (this->m_width - need_to_win); ++j) {
-            // check if field isnt empty
+
+
+    for (int i = 0; i < this->m_height; i++) {
+        for (int j = 0; j < this->m_width; j++) {
+            bool horizontal_possible = true;
+            bool vertical_possible = true;
+            bool diagonal_possible = true;
+
+            // check if field isn't empty
             if (this->m_fields[i][j] != FieldColor::NONE) {
-                for (int k = 0; k < need_to_win; ++k) {
-                    // ....
-                    // ....
+                cout << "field not empty: i=" << i << " j=" << j << std::endl;
+                for (int k = 0; k < need_to_win; k++) {
+                    // horizontal check
+                    if (this->m_fields[i][j] == this->m_fields[i][j + k] && horizontal_possible && j < (this->m_width - need_to_win) + 1) {
+                        horizontal_possible = true;
+                        cout << "horizontal possible" << std::endl;
+                        if (k == need_to_win - 1) {
+                            if (this->m_fields[i][j] == FieldColor::RED) {
+                                cout << "Red won! horizontal" << std::endl;
+                                return WinnerColor::RED;
+                            }
+                            else {
+                                cout << "Yellow won! horizontal" << std::endl;
+                                return WinnerColor::YELLOW;
+                            }
+                        }
+                        cout << "test" << std::endl;
+                    }
+                    else {
+                        cout << "horizontal not possible" << std::endl;
+                        horizontal_possible = false;
+                    }
+
+                    cout << "test2" << std::endl;
+
+                    // vertical check
+                    if (this->m_fields[i][j] == this->m_fields[i + k][j] && vertical_possible && i < (this->m_height - need_to_win) + 1) {
+                        vertical_possible = true;
+                        cout << "vertical possible" << std::endl;
+                        if (k == need_to_win - 1) {
+                            if (this->m_fields[i][j] == FieldColor::RED) {
+                                cout << "Red won! vertical" << std::endl;
+                                return WinnerColor::RED;
+                            }
+                            else {
+                                cout << "Yellow won! vertical" << std::endl;
+                                return WinnerColor::YELLOW;
+                            }
+                        }
+                    }
+                    else {
+                        vertical_possible = false;
+                    }
+
+                    // diagonal check
+//                    if (this->m_fields[i][j] == this->m_fields[i + k][j + k] && diagonal_possible) {
+//                        diagonal_possible = true;
+//                        if (k == need_to_win - 1) {
+//                            if (this->m_fields[i][j] == FieldColor::RED) {
+//                                cout << "Red won! diagonal" << std::endl;
+//                                return WinnerColor::RED;
+//                            }
+//                            else {
+//                                cout << "Yellow won! diagonal" << std::endl;
+//                                return WinnerColor::YELLOW;
+//                            }
+//                        }
+//                    }
+//                    else {
+//                        diagonal_possible = false;
+//                    }
                 }
             }
         }
     }
+    return WinnerColor::NONE;
 }
 
 

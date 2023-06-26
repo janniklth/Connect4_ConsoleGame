@@ -25,24 +25,31 @@ void App::run()
 
     // create players
     Human player1("Player 1", FieldColor::RED);
-    Bot_Random player2("Player 2", FieldColor::YELLOW);
+    Human player2("Player 2", FieldColor::YELLOW);
 
     // main loop
-    while (true)
-    {
+    while (true) {
         // player 1 makes a move
         player1.setMove(gameboard);
         gameboard.printBoard();
 
         // check win condition
-        // ...
+        WinnerColor test = gameboard.checkWinner();
+        if (test != WinnerColor::NONE) {
+            cout << "somebody has won!" << endl;
+            break;
+        }
 
         // player 2 makes a move
         player2.setMove(gameboard);
         gameboard.printBoard();
 
         // check win condition
-        // ...
+        test = gameboard.checkWinner();
+        if (test != WinnerColor::NONE) {
+            cout << "somebody has won!" << endl;
+            break;
+        }
     }
 }
 
