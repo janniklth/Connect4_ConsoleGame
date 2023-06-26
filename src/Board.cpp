@@ -74,6 +74,24 @@ void Board::printColoredCharacter(char character, FieldColor color)
     std::cout << "\033[0m";
 }
 
+// method to check if there is a winner
+WinnerColor Board::checkWinner()
+{
+    int need_to_win = 4;
+    for (int i = 0; i < (this->m_height - need_to_win); ++i) {
+        for (int j = 0; j < (this->m_width - need_to_win); ++j) {
+            // check if field isnt empty
+            if (this->m_fields[i][j] != FieldColor::NONE) {
+                for (int k = 0; k < need_to_win; ++k) {
+                    // ....
+                    // ....
+                }
+            }
+        }
+    }
+}
+
+
 
 // method to get the height of the board
 int Board::getHeight() const
@@ -86,3 +104,4 @@ int Board::getWidth() const
 {
     return m_width;
 }
+
