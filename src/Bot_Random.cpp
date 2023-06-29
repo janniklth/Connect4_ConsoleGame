@@ -29,8 +29,8 @@ void Bot_Random::setMove(Board &board)
     std::cout << std::endl;
 
     // get a random number between 0 and the width of the board
-
-    int column = selectColum(generator);
+    std::uniform_int_distribution<int> selectColum(0, board.getWidth() - 1);
+    int column = selectColum(this->m_generator);
 
     // set the lowest free field in the wanted column to the color of the player
     board.setLowestFreeField(column, this->m_color);

@@ -22,11 +22,8 @@ public:
     Bot_Random(std::string name, FieldColor color)
         : Player(std::move(name), color)
     {
-        std::random_device device;
-        std::mt19937 generator(device());
-        std::uniform_int_distribution<int> selectColum(0, board.getWidth());
-
-
+        // initialize random generator
+        std::mt19937 m_generator(m_device());
     };
 
     // destructor
@@ -38,7 +35,8 @@ public:
     void setMove(Board& board) override;
 
 private:
-    std::random_device device;
+    std::random_device m_device;
+    std::mt19937 m_generator;
 };
 
 
