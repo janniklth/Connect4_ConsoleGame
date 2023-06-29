@@ -106,6 +106,7 @@ Player *App::playerTypeToObject(PlayerType playerType, std::string player_name, 
     }
 }
 
+// Method for entering nickname
 std::string App::enterNickname() {
     cout << "Please enter your Nickname: ";
 
