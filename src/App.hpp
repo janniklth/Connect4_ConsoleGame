@@ -44,6 +44,10 @@ public:
     /// @return PlayerType: the chosen player type
     PlayerType choosePlayerType(std::string player_color);
 
+    /// Method to choose a nickname
+    /// @return String: the entered name of the user
+    std::string enterNickname();
+
     /// Method to choose a player type
     /// @param fieldColor: color of the player on the boarf
     /// @param player_name: name of the player

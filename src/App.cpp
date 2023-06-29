@@ -102,3 +102,7 @@ Player *App::playerTypeToObject(PlayerType playerType, std::string player_name, 
             return nullptr;
     }
 }
+
+std::string App::enterNickname() {
+
+}
