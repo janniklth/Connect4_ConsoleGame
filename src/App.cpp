@@ -68,8 +68,7 @@ PlayerType App::choosePlayerType(std::string player_color)
 
 
     int selected_player_type;
-    std::cin >> selected_player_type;
-    cout << endl;
+
 
     while (!(std::cin >> selected_player_type)) {
         cout << "This was no number. Please try again!" << endl;
@@ -78,6 +77,8 @@ PlayerType App::choosePlayerType(std::string player_color)
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
+
+    cout << endl;
 
 
     switch (selected_player_type) {
