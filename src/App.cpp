@@ -16,11 +16,14 @@ void App::run()
 
     // choose first player type and get input from user
     PlayerType player_red = choosePlayerType("first (red)");
+    std::string player_red_name = enterNickname();
+
     PlayerType player_yellow = choosePlayerType("second (yellow)");
+    std::string player_yellow_name = enterNickname();
 
     // create players
-    Player *player1 = playerTypeToObject(player_red, "Player 1", FieldColor::RED);
-    Player *player2 = playerTypeToObject(player_yellow, "Player 2", FieldColor::YELLOW);
+    Player *player1 = playerTypeToObject(player_red, player_red_name, FieldColor::RED);
+    Player *player2 = playerTypeToObject(player_yellow, player_yellow_name, FieldColor::YELLOW);
     
     // create the board and test print it
     Board gameboard(6, 7);
@@ -104,5 +107,10 @@ Player *App::playerTypeToObject(PlayerType playerType, std::string player_name, 
 }
 
 std::string App::enterNickname() {
+    cout << "Please enter your Nickname: ";
 
+    std::string nickname;
+    std::cin >> nickname;
+
+    return nickname;
 }
