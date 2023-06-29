@@ -11,10 +11,16 @@ Connect 4 is a classic two-player game where the goal is to connect four discs o
 
 <img src="/UML_Diagram.png" alt="Alt text" title="Optional title">
 
-- `App`: Represents a computer-controlled player with different strategies.
-- `Game`: Represents the game logic and controls the flow of the game.
+- `App`: Manages the start of the game and processes the player type choices of the user.
 - `Board`: Manages the game board and provides operations for placing discs and checking win conditions.
 - `Player`: Represents a player and stores information such as player name and disc color.
+   - `Human`: Is a player, who is controlled by the user.
+   - `Bot_Horizontal`: Is a player bot, who always places the discs horizontal.
+   - `Bot_Vertical`: Is a player bot, who always places the discs vertical.
+   - `Bot_Random`: Is a player bot, who always places the discs random.
+   - `Bot_AI`: Is a player bot, who always places the discs in a smart way with the target to win.
+- `FieldColor`: Represents the disc colors.
+- `PlayerType`: Represents all player types.
 
 
 ## Features
