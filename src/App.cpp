@@ -66,9 +66,19 @@ PlayerType App::choosePlayerType(std::string player_color)
     cout << "  5. Bot (AI)" << endl;
     cout << "Please enter a number: ";
 
+
     int selected_player_type;
     std::cin >> selected_player_type;
     cout << endl;
+
+    while (!(std::cin >> selected_player_type)) {
+        cout << "This was no number. Please try again!" << endl;
+        cout << "Please enter a number: ";
+
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+
 
     switch (selected_player_type) {
         case 1:
