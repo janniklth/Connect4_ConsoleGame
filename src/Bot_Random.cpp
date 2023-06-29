@@ -29,10 +29,6 @@ void Bot_Random::setMove(Board &board)
     std::cout << std::endl;
 
     // get a random number between 0 and the width of the board
-    random_device device;
-    mt19937 generator(device());
-    uniform_int_distribution<int> selectColum(0, board.getWidth());
-
 
     int column = selectColum(generator);
 

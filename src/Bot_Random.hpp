@@ -21,7 +21,13 @@ public:
     // overloaded constructor
     Bot_Random(std::string name, FieldColor color)
         : Player(std::move(name), color)
-    {};
+    {
+        std::random_device device;
+        std::mt19937 generator(device());
+        std::uniform_int_distribution<int> selectColum(0, board.getWidth());
+
+
+    };
 
     // destructor
     ~Bot_Random()
@@ -30,6 +36,9 @@ public:
     /// Method to make a move
     /// @param board: the board to make the move on
     void setMove(Board& board) override;
+
+private:
+    std::random_device device;
 };
 
 
