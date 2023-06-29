@@ -159,10 +159,10 @@ WinnerColor Board::checkWinner()
                         }
                     }
 
-                    else
-                    {
-                        cout << "  DIAGONAL down not possible" << std::endl;
-                    }
+//                    else
+//                    {
+//                        cout << "  DIAGONAL down not possible" << std::endl;
+//                    }
 
                     // diagonal up check
                     if (i - need_to_win + 2 > 0 && j < (this->m_width - need_to_win) + 1)
@@ -185,10 +185,10 @@ WinnerColor Board::checkWinner()
                             diagonal_up_possible = false;
                         }
                     }
-                    else
-                    {
-                        cout << "  DIAGONAL up not possible" << std::endl;
-                    }
+//                    else
+//                    {
+//                        cout << "  DIAGONAL up not possible" << std::endl;
+//                    }
 
                 }
             }
