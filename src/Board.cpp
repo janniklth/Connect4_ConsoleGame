@@ -136,22 +136,29 @@ WinnerColor Board::checkWinner()
                     }
 
                     // diagonal down check
-//                    if (this->m_fields[i][j] == this->m_fields[i + k][j + k] && diagonal_possible) {
-//                        diagonal_possible = true;
-//                        if (k == need_to_win - 1) {
-//                            if (this->m_fields[i][j] == FieldColor::RED) {
-//                                cout << "Red won! diagonal" << std::endl;
-//                                return WinnerColor::RED;
-//                            }
-//                            else {
-//                                cout << "Yellow won! diagonal" << std::endl;
-//                                return WinnerColor::YELLOW;
-//                            }
-//                        }
-//                    }
-//                    else {
-//                        diagonal_possible = false;
-//                    }
+                    if (i < (this->m_height - need_to_win) + 1 && j < (this->m_width - need_to_win) + 1)
+                    {
+                        if (this->m_fields[i][j] == this->m_fields[i + k][j + k] && diagonal_possible) {
+                            diagonal_possible = true;
+                            if (k == need_to_win - 1) {
+                                if (this->m_fields[i][j] == FieldColor::RED) {
+                                    cout << "Red won! diagonal down" << std::endl;
+                                    return WinnerColor::RED;
+                                }
+                                else {
+                                    cout << "Yellow won! diagonal down" << std::endl;
+                                    return WinnerColor::YELLOW;
+                                }
+                            }
+                        }
+                        else {
+                            diagonal_possible = false;
+                        }
+                    }
+
+                    // diagonal up check
+                    // ...
+
                 }
             }
         }
