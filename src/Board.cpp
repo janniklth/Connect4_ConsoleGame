@@ -135,7 +135,7 @@ WinnerColor Board::checkWinner()
                         }
                     }
 
-                    // diagonal check
+                    // diagonal down check
 //                    if (this->m_fields[i][j] == this->m_fields[i + k][j + k] && diagonal_possible) {
 //                        diagonal_possible = true;
 //                        if (k == need_to_win - 1) {
