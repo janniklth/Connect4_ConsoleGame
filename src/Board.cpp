@@ -78,6 +78,7 @@ void Board::printColoredCharacter(char character, FieldColor color)
 WinnerColor Board::checkWinner()
 {
     int need_to_win = 4;
+    bool draw_possible = true;
 
 
     for (int i = 0; i < this->m_height; i++) {
@@ -192,7 +193,16 @@ WinnerColor Board::checkWinner()
 
                 }
             }
+            else
+            {
+                draw_possible = false;
+            }
         }
+    }
+    if (draw_possible)
+    {
+        cout << "Draw!" << std::endl;
+        return WinnerColor::DRAW;
     }
     return WinnerColor::NONE;
 }
