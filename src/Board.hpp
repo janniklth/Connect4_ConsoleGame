@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 
+
 using std::cout;
 
 enum class FieldColor
@@ -15,6 +16,22 @@ enum class FieldColor
     RED,
     YELLOW,
     NONE
+};
+
+enum class WinnerColor
+{
+    RED,
+    YELLOW,
+    DRAW,
+    NONE
+};
+
+enum class GameState
+{
+    RUNNING,
+    RED_WON,
+    YELLOW_WON,
+    DRAW
 };
 
 class Board
@@ -53,6 +70,16 @@ public:
     /// @param column: the column to set
     /// @param color: the color to set the column to
     void setLowestFreeField(int column, FieldColor color);
+
+    /// Method to check if game is finished (somebody won or board is full)
+    /// @return bool: true if game is finished, false if not
+    bool isGameFinished();
+
+    /// Method to check if a player won
+    /// @return GameState: the color of the winner or NONE if no winner
+    GameState checkWinner();
+
+
 
 
     // - - - Getter and Setter - - -

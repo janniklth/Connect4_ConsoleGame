@@ -32,8 +32,7 @@ void App::run()
 
 
     // main loop
-    while (true)
-    {
+    while (true) {
         // player 1 makes a move
         //player1.setMove(gameboard);
 
@@ -41,7 +40,11 @@ void App::run()
         gameboard.printBoard();
 
         // check win condition
-        // ...
+        GameState test = gameboard.checkWinner();
+        if (test != GameState::RUNNING) {
+            cout << "somebody has won!" << endl;
+            break;
+        }
 
         // player 2 makes a move
         //player2.setMove(gameboard);
@@ -50,7 +53,11 @@ void App::run()
         gameboard.printBoard();
 
         // check win condition
-        // ...
+        test = gameboard.checkWinner();
+        if (test != GameState::RUNNING) {
+            cout << "somebody has won!" << endl;
+            break;
+        }
     }
 }
 
