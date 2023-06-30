@@ -34,8 +34,8 @@ void App::run()
         gameboard.printBoard();
 
         // check win condition
-        WinnerColor test = gameboard.checkWinner();
-        if (test != WinnerColor::NONE) {
+        GameState test = gameboard.checkWinner();
+        if (test != GameState::RUNNING) {
             cout << "somebody has won!" << endl;
             break;
         }
@@ -46,7 +46,7 @@ void App::run()
 
         // check win condition
         test = gameboard.checkWinner();
-        if (test != WinnerColor::NONE) {
+        if (test != GameState::RUNNING) {
             cout << "somebody has won!" << endl;
             break;
         }

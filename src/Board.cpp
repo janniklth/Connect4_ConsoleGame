@@ -75,7 +75,7 @@ void Board::printColoredCharacter(char character, FieldColor color)
 }
 
 // method to check if there is a winner
-WinnerColor Board::checkWinner()
+GameState Board::checkWinner()
 {
     int need_to_win = 4;
     bool draw_possible = true;
@@ -100,11 +100,11 @@ WinnerColor Board::checkWinner()
                             if (k == need_to_win - 1) {
                                 if (this->m_fields[i][j] == FieldColor::RED) {
                                     cout << "Red won! horizontal" << std::endl;
-                                    return WinnerColor::RED;
+                                    return GameState::RED_WON;
                                 }
                                 else {
                                     cout << "Yellow won! horizontal" << std::endl;
-                                    return WinnerColor::YELLOW;
+                                    return GameState::YELLOW_WON;
                                 }
                             }
 //                            cout << "test" << std::endl;
@@ -123,11 +123,11 @@ WinnerColor Board::checkWinner()
                             if (k == need_to_win - 1) {
                                 if (this->m_fields[i][j] == FieldColor::RED) {
                                     cout << "Red won! vertical" << std::endl;
-                                    return WinnerColor::RED;
+                                    return GameState::RED_WON;
                                 }
                                 else {
                                     cout << "Yellow won! vertical" << std::endl;
-                                    return WinnerColor::YELLOW;
+                                    return GameState::YELLOW_WON;
                                 }
                             }
                         }
@@ -146,11 +146,11 @@ WinnerColor Board::checkWinner()
                             if (k == need_to_win - 1) {
                                 if (this->m_fields[i][j] == FieldColor::RED) {
                                     cout << "Red won! diagonal down" << std::endl;
-                                    return WinnerColor::RED;
+                                    return GameState::RED_WON;
                                 }
                                 else {
                                     cout << "Yellow won! diagonal down" << std::endl;
-                                    return WinnerColor::YELLOW;
+                                    return GameState::YELLOW_WON;
                                 }
                             }
                         }
@@ -173,11 +173,11 @@ WinnerColor Board::checkWinner()
                             if (k == need_to_win - 1) {
                                 if (this->m_fields[i][j] == FieldColor::RED) {
                                     cout << "Red won! diagonal up" << std::endl;
-                                    return WinnerColor::RED;
+                                    return GameState::RED_WON;
                                 }
                                 else {
                                     cout << "Yellow won! diagonal up" << std::endl;
-                                    return WinnerColor::YELLOW;
+                                    return GameState::YELLOW_WON;
                                 }
                             }
                         }
@@ -202,9 +202,9 @@ WinnerColor Board::checkWinner()
     if (draw_possible)
     {
         cout << "Draw!" << std::endl;
-        return WinnerColor::DRAW;
+        return GameState::DRAW;
     }
-    return WinnerColor::NONE;
+    return GameState::RUNNING;
 }
 
 

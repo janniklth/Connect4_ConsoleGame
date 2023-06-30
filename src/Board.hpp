@@ -26,6 +26,14 @@ enum class WinnerColor
     NONE
 };
 
+enum class GameState
+{
+    RUNNING,
+    RED_WON,
+    YELLOW_WON,
+    DRAW
+};
+
 class Board
 {
 public:
@@ -68,8 +76,8 @@ public:
     bool isGameFinished();
 
     /// Method to check if a player won
-    /// @return WinnerColor: the color of the winner or NONE if no winner
-    WinnerColor checkWinner();
+    /// @return GameState: the color of the winner or NONE if no winner
+    GameState checkWinner();
 
 
 
