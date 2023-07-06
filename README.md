@@ -48,7 +48,7 @@ Connect 4 is a classic two-player game where the goal is to connect four discs o
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/Connect4_ConsoleGame.git
+   git clone https://github.com/janniklth/Connect4_ConsoleGame.git
 
 2. Compile the source code using a C++ compiler:
 
